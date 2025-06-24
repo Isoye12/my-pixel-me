@@ -1,0 +1,268 @@
+.app {
+  width: 100vw; /* 화면 가로 전체 너비 */
+  background: #888888; /* 기본 배경색 */
+  background-image: url("https://cdn.pixabay.com/photo/2017/02/28/22/00/on-wood-2106951_1280.jpg"); /* 배경 이미지 */
+  background-size: cover; /* 배경 이미지 화면 꽉 채우기 */
+}
+
+.screen {
+  min-height: 100vh; /* 화면 세로 최소 높이 100% */
+  display: flex; /* flex 레이아웃 적용 */
+  flex-direction: column; /* 세로 방향 정렬 */
+  align-items: center; /* 가로 중앙 정렬 */
+  padding: 20px; /* 내부 여백 */
+  color: #222222; /* 기본 글자색 */
+}
+
+.home-screen {
+  justify-content: center; /* 세로 중앙 정렬 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+.home-screen h1 {
+  font-size: 3rem; /* 제목 글씨 크기 */
+  margin-bottom: 10px; /* 아래 여백 */
+}
+
+.home-screen h2 {
+  font-size: 1.5rem; /* 부제목 글씨 크기 */
+  margin-bottom: 30px; /* 아래 여백 */
+}
+
+.game-description {
+  color: #D75879; /* 글자색 */
+  min-width: 40vw; /* 최소 너비 */
+  min-height: 35vh; /* 최소 높이 */
+  background: rgba(255,255,255,0.2); /* 투명 흰 배경 */
+  padding: 20px; /* 내부 여백 */
+  border-radius: 15px; /* 둥근 모서리 */
+  margin-bottom: 30px; /* 아래 여백 */
+  backdrop-filter: blur(50px); /* 배경 흐림 효과 */
+  display: flex; /* flex 적용 */
+  flex-direction: column; /* 세로 방향 */
+  justify-content: center; /* 세로 중앙 정렬 */
+  align-items: center; /* 가로 중앙 정렬 */
+}
+
+.start-button, .restart-button {
+  background-color: #9862A5; /* 버튼 배경 보라색 */
+  border: none; /* 테두리 제거 */
+  padding: 15px 40px; /* 버튼 내부 여백 */
+  font-size: 1.2rem; /* 글씨 크기 */
+  color: white; /* 글자색 흰색 */
+  border-radius: 25px; /* 둥근 모서리 */
+  cursor: pointer; /* 마우스 커서 포인터 */
+  transition: transform 0.2s; /* 변환 애니메이션 */
+}
+
+.start-button:hover, .restart-button:hover {
+  transform: translateY(-2px); /* 커서 올리면 애니메이션 있게 */
+}
+
+.game-header {
+  display: flex; /* flex */
+  justify-content: space-between; /* 좌우 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  min-width: 60vw; /* 최소 너비 */
+  margin-bottom: 20px; /* 아래 여백 */
+  background: rgba(255,255,255,0.2); /* 투명 배경 */
+  padding: 20px 40px; /* 내부 여백 */
+  border-radius: 15px; /* 둥근 모서리 */
+  backdrop-filter: blur(50px); /* 배경 흐림 */
+}
+
+.game-header p {
+  color: #444444; /* 글자색 */
+  font-size: 1.2rem; /* 글씨 크기 */
+  font-weight: 800; /* 굵은 글씨 */
+}
+
+.timer {
+  font-size: 1.2rem; /* 글씨 크기 */
+  font-weight: 800; /* 굵은 글씨 */
+  color: #FADD1F; /* 노란색 글자 */
+}
+
+.end-button {
+  background: #9862A5; /* 보라색 배경 */
+  border: none; /* 테두리 제거 */
+  padding: 10px 20px; /* 내부 여백 */
+  color: white; /* 글자 흰색 */
+  border-radius: 20px; /* 둥근 모서리 */
+  cursor: pointer; /* 포인터 커서 */
+  transition: background 0.2s; /* 배경색 전환 애니메이션 */
+}
+
+.end-button:hover {
+  background: #c0392b; /* 커서 올리면 빨간색 배경 */
+}
+
+.game-content {
+  display: flex; /* flex */
+  justify-content: center; /* 중앙 정렬 */
+  align-items: flex-start; /* 위쪽 정렬 */
+  max-width: 1200px; /* 최대 너비 */
+  width: 100%; /* 가로 너비 */
+  gap: 40px; /* 요소 간격 */
+}
+
+.avatar-section {
+  display: flex; /* flexbox */
+  margin-right: 20px; /* 오른쪽 마진 */
+  gap: 20px; /* 내부 요소 간격 */
+}
+
+.avatar-container {
+  width: 300px; /* 고정 너비 */
+  height: 400px; /* 고정 높이 */
+  padding: 20px 15px; /* 내부 여백 */
+  background: rgba(255,255,255,0.2); /* 투명 배경 */
+  border-radius: 20px; /* 둥근 모서리 */
+  backdrop-filter: blur(50px); /* 배경 흐림 */
+  position: relative; /* 자식 요소 절대 위치 기준 */
+}
+
+.avatar-base, .clothing {
+  position: absolute; /* 겹쳐서 배치 */
+  width: 90%; /* 너비 비율 */
+  height: 90%; /* 높이 비율 */
+  object-fit: contain; /* 이미지 비율 유지 */
+}
+
+.clothing.hair { z-index: 5; } /* 머리카락 이미지를 최상위로 */
+.clothing.top { z-index: 4; } /* 상의 */
+.clothing.bottom { z-index: 3; } /* 하의 */
+.clothing.shoe { z-index: 2; } /* 신발 */
+.clothing.socks { z-index: 1; } /* 양말 */
+
+.clothing-selection {
+  flex: 1; /* 남은 공간 모두 땡겨지게 */
+  display: flex; /* flex */
+  flex-direction: column; /* 세로 정렬 */
+  gap: 20px; /* 요소 간격 */
+  max-width: 600px; /* 최대 너비 */
+}
+
+.clothing-group {
+  background: rgba(255,255,255,0.2); /* 투명 배경 */
+  padding: 15px; /* 내부 여백 */
+  border-radius: 15px; /* 둥근 모서리 */
+  backdrop-filter: blur(50px); /* 배경 흐림 */
+}
+
+.clothing-group p {
+  color: #444444; /* 글자색 */
+  font-weight: 600; /* 중간 굵기 */
+  margin: 0 0 10px 0; /* 아래 여백 */
+  text-align: center; /* 가운데 정렬 */
+}
+
+.clothing-options {
+  display: flex; /* flex */
+  gap: 10px; /* 요소 간격 */
+  justify-content: center; /* 가운데 정렬 */
+}
+
+.clothing-option {
+  width: 60px; /* 버튼 너비 */
+  height: 60px; /* 버튼 높이 */
+  border: 2px solid transparent; /* 테두리 기본 투명 */
+  border-radius: 10px; /* 둥근 모서리 */
+  background: rgba(255,255,255,0.2); /* 배경 투명 */
+  cursor: pointer; /* 포인터 커서 */
+  transition: all 0.2s; /* 애니메이션 */
+  padding: 5px; /* 내부 여백 */
+}
+
+.clothing-option:hover {
+  transform: scale(1.05); /* 커서 올리면 약간 확대되도록 */
+  background: rgba(255,255,255,0.3); /* 배경 조금 더 밝게하기 */
+}
+
+.clothing-option.selected {
+  border-color: #D75879; /* 선택된 버튼 테두리 */
+  background: rgba(255,235,59,0.2); /* 선택된 버튼 배경 노란색으로 */
+}
+
+.clothing-option img {
+  width: 100%; /* 이미지 너비 꽉 채우기 */
+  height: 100%; /* 이미지 높이 꽉 채우기 */
+  object-fit: contain; /* 이미지 비율 유지 */
+}
+
+.result-screen {
+  justify-content: center; /* 세로 중앙 정렬 */
+}
+
+.result-screen h2{
+  color: #ffffff; /* 결과 제목 흰색 */
+}
+
+.result-content {
+  display: flex; /* flex */
+  gap: 40px; /* 요소 간격 */
+  align-items: center; /* 세로 중앙 정렬 */
+  margin-bottom: 30px; /* 아래 여백 */
+}
+
+.final-avatar {
+  display: flex;
+  flex-direction: column;
+}
+
+.score-section {
+  background: rgba(255,255,255,0.2); /* 투명 배경 */
+  padding: 30px; /* 내부 여백 */
+  border-radius: 20px; /* 둥근 모서리 */
+  backdrop-filter: blur(50px); /* 배경 흐림 */
+}
+
+.score-info {
+  margin-bottom: 20px; /* 아래 여백 */
+}
+
+.score-info p {
+  font-size: 1.2rem; /* 글씨 크기 */
+  margin: 10px 0; /* 위아래 여백 */
+}
+
+.category {
+  color: #D75879; /* 핑크색 */
+  font-weight: bold; /* 굵은 글씨 */
+}
+
+.score {
+  color: #4caf50; /* 초록색 */
+  font-weight: bold; /* 굵은 글씨 */
+  font-size: 1.2rem; /* 글씨 크기 */
+}
+
+.score-message {
+  font-size: 1.1rem; /* 글씨 크기 */
+  line-height: 1.5; /* 줄간격 */
+  color: #222222; /* 글자색 */
+}
+
+@media (max-width: 768px) { /* 반응형하기 */
+  .game-content {
+    flex-direction: column; /* 모바일에서 세로 정렬 */
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .result-content {
+    flex-direction: column; /* 모바일에서 세로 정렬 */
+    gap: 20px;
+  }
+  
+  .avatar-container {
+    width: 250px; /* 모바일에서 아바타 크기 작아지게 */
+    height: 320px;
+  }
+  
+  .game-header {
+    flex-direction: column; /* 모바일에서 헤더 세로로 정렬 */
+    gap: 10px;
+    text-align: center;
+  }
+}
